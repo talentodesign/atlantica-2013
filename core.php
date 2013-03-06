@@ -2,15 +2,15 @@
 // ==================================== DADOS INICIAIS DO SITE ==================================== 
 
 //Nome do Site
-$core_nome     = "nahum";
+$core_nome     = "Atlântica Construtora";
 //Descrição do Site
-$core_desc     ="Nahum engenharia";
+$core_desc     ="Atlântica Construtora 2013";
 //Palavras-Chaves sobre o site, use virgulas para separa-las
-$core_keywords ="engenharia, nahum, belem, para"; 
+$core_keywords ="engenharia, atlantica, construtora, belem, para"; 
 //Pasta do projeto
-$core_pasta    ="nahum";
+$core_pasta    ="atlantica-2013";
 //E-mail para recebimento das mensagens via site
-$core_email    ="web@gmail.com.br"; 
+$core_email    ="genivaljunior86@gmail.com.br"; 
 
 // ========================================== FUNÇÕES ==============================================
 if($core_nome == "" || $core_desc == "" || $core_keywords == "" || $core_pasta == "" || $core_email == ""){
@@ -22,7 +22,7 @@ if($core_nome == "" || $core_desc == "" || $core_keywords == "" || $core_pasta =
 function servidor(){
 	$core_servidor = $_SERVER['SERVER_NAME'];
 	global $core_pasta;
-	if($_SERVER['SERVER_NAME']=="localhost" || $_SERVER['SERVER_NAME']=="127.0.0.1"){
+	if($_SERVER['SERVER_NAME']=="localhost" || $_SERVER['SERVER_NAME']=="127.0.0.1" || similar_text($_SERVER['SERVER_NAME'],"192.168.0.100")>=10){
 		echo "http://".$core_servidor."/".$core_pasta."/";
 		}
 	else{

@@ -1,0 +1,102 @@
+/* Slidorion Stylesheet */
+#slidorion {
+	width: 768px;			/* Set to slidorion width. Is equal to #slider + #accordion width */
+	height: 400px;			/* Set to slidorion height. Is equal to #slider and #accordion height */
+	position: relative;
+	left: 50%;
+	margin-left: -384px;
+	padding: 10px;
+	background: white;
+	border: 1px solid #bbb;
+}
+
+#slider {
+	width: 488px;			/* Set to slider width */
+	height: 400px;			/* Set to slider height */
+	position: relative;
+	float: left;
+	overflow: hidden;		/* Hides the animations */
+}
+
+#slider > div {
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-color: white;
+}
+
+#accordion {
+	width: 280px;			/* Set to accordion width */
+	height: 400px;			/* Set to image height */
+	font-family: Verdana;
+	/*background: #eee;*/
+	position: relative;
+	z-index:999;
+	overflow: hidden;
+	float: left;
+}
+
+#accordion > .link-header {
+	padding: 8px 14px;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	background: #75b950;
+	background: -moz-linear-gradient(top, #75b950 40%, #498a24 100%);
+	background: -webkit-linear-gradient(top, #75b950 40%,#498a24 100%);
+	background: -o-linear-gradient(top, #75b950 40%,#498a24 100%);
+	background: -ms-linear-gradient(top, #75b950 40%,#498a24 100%);
+	background: linear-gradient(top, #75b950 40%,#498a24 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75b950', endColorstr='#498a24',GradientType=0 );
+	border-top: 1px solid #ccc;
+}
+
+#accordion > .link-header:first-child {
+	border-top:none;
+}
+
+#accordion > .link-header:hover {
+	background: #006e2e;
+	cursor: pointer;
+}
+
+#accordion > .link-header.active {
+	border-bottom: none;
+	background: #006e2e !important;
+	text-transform: uppercase;
+	filter: none;
+	color: white;
+}
+
+#accordion > .link-content {
+	height: 257px;			/* This height needs to be changed as it depends on the accordion height and number of tabs */
+	font-weight: normal;
+	font-size: 13px;
+	line-height:20px;
+	margin: 0;
+	padding: 16px;
+	border: none;
+	background: #8fc400;
+	overflow:auto;
+	color: white;
+}
+
+#slidorion .nav {
+    position: absolute;
+    top: 200px;
+    width: 16px;
+    height: 27px;
+    z-index: 9999;
+    background: url('../img/arrows.png') 0 0 no-repeat;
+    cursor: pointer;
+}
+
+#slidorion .nav-left {
+	left: 30px;
+}
+
+#slidorion .nav-right {
+	right: 310px;
+	background-position: -16px 0;
+}

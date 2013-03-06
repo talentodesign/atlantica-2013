@@ -1,3 +1,18 @@
+jQuery.fn.extend({
+    adjustHeight: function(){
+        var element = $(this);
+        var finalHeight = 0;
+        $.each(element,function(i,compare){
+            if($(compare).height() > finalHeight){
+                finalHeight = $(compare).height();
+            }
+        });
+        $.each(element,function(i,change){
+            $(change).height(finalHeight);
+        });
+    return $(this);
+    }
+});
 $(document).ready(function(){
 	$('.botao').not(".current").hover(
 		function(){
@@ -15,13 +30,18 @@ $(document).ready(function(){
 		var end2= $(this).attr('src');
 		var hov2 = end2.replace('_off.','_on.');
 		$(this).attr('src', hov2);
-		
 		});
-		
-	/*---------------TWITTER-------------------*/
 
-	$("#twits").tweet();
-		
+	/*---------------EFEITO MENU SIDEBAR-------------------*/
+	$("#sidebar #menu li").hover(
+		function(){
+			$(this).stop().animate({backgroundColor:"#1A4F57"},"slow");
+		},
+		function(){
+			$(this).stop().animate({backgroundColor:"#3d9605"},"slow");
+		}
+		);
+
 		
 	/* ------------ CONTATO  AJAX ---------------------*/
 	$("#contato_enviando").on('hidden',function(){
@@ -58,8 +78,44 @@ $(document).ready(function(){
 		}
 		return false;
 		});
-	
-	/* ------------ SLIDE JCYCLE ---------------------*/	
-	$("#slider").cycle({fx:"fade"});
-	
+
+	//var alturaSide = $("#content").css("height");
+	//$("#sidebar").css({'height':alturaSide});
+	/* ------------ BANNER HOME ---------------------*/
+	$('#slidorion').slidorion();
+
+
+	/* ------------ GALERIAS ---------------------*/
+	$("#esq .gal").carouFredSel({
+		width: 330,
+		height: 75,
+		items: 3,
+		scroll: 1,
+		auto: false,
+		next: "#esq .next"
+	}).find("a").fancybox({
+		padding:0,
+		helpers : {
+			overlay : {
+				locked : false
+			}
+		}
+	});
+
+	$("#dir .gal").carouFredSel({
+		width: 330,
+		height: 75,
+		items: 3,
+		scroll: 1,
+		auto: false,
+		prev: "#dir .prev"
+	}).find("a").fancybox({
+		padding:0,
+		helpers : {
+			overlay : {
+				locked : false
+			}
+		}
+	});
+	$('#sidebar, #content').adjustHeight();
 });

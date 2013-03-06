@@ -1,19 +1,7 @@
-
-	    <div id="header" class="centraliza">
-
-        	<p class="texto_topo">Todos os itens de luxo, no 2 Quartos,<br/>
-        	 	com o melhor preço da categoria.</p>
-        	<img src="images/topo_cont.png" alt="" class="image">   
-  		</div>
-        
-        
-			<div id="vendas">
-		       <p class="vend">VENDAS</p>
-		        <hr>
-		        <p>(091) 3277 - 2960</p>
-		        <p>(091) 3228 - 0875</p>	        	
-			</div>
-
-
+<div class="centraliza">
+	<a href="<?php servidor(); ?>"><img src="<?php servidor(); ?>images/logo.png" height="127" width="422" alt="" id="logo"></a>
+	<img src="<?php servidor(); ?>images/header-icon.png" height="211" width="368" alt="" id="icon">
+	<div class="separator"></div>
+</div>
 
 
